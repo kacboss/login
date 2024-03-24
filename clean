@@ -1,0 +1,16 @@
+#!/bin/sh
+set +e
+# shellcheck disable=SC2039
+source .env
+
+echo "This script will delete database and docker volumes from wordpress like uploads from project \033[1m$COMPOSE_PROJECT_NAME\033[0m"
+read -p "Are you sure? This is unreversible! [y/n]: "
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  docker-compose down
+  docker volume rm "${COMPOSE_PROJECT_NAME}_database"
+  docker volume rm "${COMPOSE_PROJECT_NAME}_node_modules"
+  rm -R -f docker/volumes/wordpress/wp-content
+fi
+
+set -e

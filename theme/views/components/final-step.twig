@@ -1,0 +1,24 @@
+<div class="final-step">
+
+    {% set final = options.quiz %}
+
+    <div class="final-step__images">
+        {% for item in final.final_step_images %}
+        <div class="final-step__images__item">
+            <img src="{{ item }}" alt="">
+        </div>
+            
+        {% endfor %}     
+    </div>
+
+    <div class="final-step__title">{{ final.final_step_title }}</div>
+    <div class="final-step__subtitle">
+        {{ final.final_step_text }}
+    </div>
+
+    <div class="final-step__footer">
+        <a data-href="" target="_blank" class="final-step__footer__btn btn see-more">POKAŻ OFERTY</a>
+        <div class="final-step__footer__btn btn again" data-action="refreshQuiz">Wypełnij quiz jeszcze raz</div>
+    </div>
+
+</div>

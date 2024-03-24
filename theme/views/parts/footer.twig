@@ -1,0 +1,96 @@
+<footer class="footer">
+
+  <div class="footer__arrow">
+    {% include "views/svg/arrow-top.svg" %}
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="footer__top">
+        <div class="footer__top--left">
+          <div class="footer-title" data-fx="fadeInUpSmall">
+            Want to see how the<br><span>magic works</span> in reality?
+          </div>
+        </div>
+        <div class="footer__top--right">
+          <div class="footer-animation" data-fx="fadeInUpSmall">
+            <img class="hand" src="{{ theme.link ~ '/images/hand.svg' }}" alt="">
+            <img class="star" src="{{ theme.link ~ '/images/star.svg' }}" alt="">
+            <img class="star2" src="{{ theme.link ~ '/images/star.svg' }}" alt="">
+
+            <div class="arrow">
+              {% include "views/svg/arright.svg" %}
+            </div>
+          </div>
+          <div data-fx="fadeInUpSmall">
+            <a href="" class="btn">Book a demo {% include 'svg/arrow-right.svg' %}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <a class="footer__logo" data-fx="fadeInUpSmall" href="{{ site.link }}">
+          {% include 'svg/Logintrade.svg' %}
+        </a>
+        <div class="footer__bottom__row">
+
+          <div class="footer__bottom__row--left">
+            <div class="footer-section-title" data-fx="fadeInUpSmall">Logintrade</div>
+            <div class="text-wrapper">
+
+              <div class="text" data-fx="fadeInUpSmall">
+                Legnicka 57d<br>
+                54-203 Wroclaw<br>
+                Poland, Europe
+              </div>
+              <div class="text" data-fx="fadeInUpSmall">
+                9947 Henry Smith Avenue<br>
+                Spring Valley, NY 11419<br>
+                USA
+              </div>
+
+            </div>
+
+          </div>
+          <div class="footer__bottom__row--right">
+            <div class="text-wrapper">
+              <div class="text-wrapper__box">
+                <div class="footer-section-title" data-fx="fadeInUpSmall">About us</div>
+                <div class="text" data-fx="fadeInUpSmall">
+                  Aenean mollis a arcu at sollicitudin
+                  integer dapibus ante leo.
+                </div>
+              </div>
+
+              <div class="text-wrapper__box">
+                <div class="footer-section-title" data-fx="fadeInUpSmall">Customers</div>
+                <div class="text" data-fx="fadeInUpSmall">
+                  Nulla placerat metus aliquam neque
+                  facilisis, non sodales metus maximus.
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+        <div class="footer__bottom__legal" data-fx="fadeInUpSmall">
+          Please visit our <a href="">Terms of Service</a> for more details. Read our <a href="">Editorial Guidelines</a> and <a href="">Privacy Policy</a>
+        </div>
+        <div class="footer__bottom__copy" data-fx="fadeInUpSmall">
+          <span class="space">© 2024 Logintrade</span>
+          Designed by <span class="name">Startify  {% include 'svg/Union.svg' %} Mateusz Madura</span>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</footer>
+
+{{ options.additionals.footer }}
+{{ function('wp_footer') }}
+
+</body>
+</html>

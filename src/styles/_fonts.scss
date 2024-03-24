@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'PPTelegraf';
+    src: url('../assets/fonts/PPTelegraf-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPTelegraf';
+    src: url('../assets/fonts/PPTelegraf-RegularOblique.otf') format('opentype');
+    font-weight: 400;
+    font-style: oblique;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPTelegraf';
+    src: url('../assets/fonts/PPTelegraf-RegularSlanted.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic; /* Assuming 'slanted' is akin to 'italic' for your purposes */
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPTelegraf';
+    src: url('../assets/fonts/PPTelegraf-Ultrabold.otf') format('opentype');
+    font-weight: 800; /* Ultrabold might be considered 800 weight */
+    font-style: normal;
+    font-display: swap;
+}

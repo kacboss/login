@@ -1,0 +1,58 @@
+{
+  "name": "xntm/wp-docker",
+  "type": "project",
+  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "authors": [
+    {
+      "name": "xntm",
+      "email": "xntm@xntm.co"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*"
+      ]
+    }
+  ],
+  "config": {
+    "optimize-autoloader": true,
+    "vendor-dir": "theme/vendor",
+    "platform": {
+      "php": "7.1.0"
+    },
+    "allow-plugins": {
+      "composer/installers": true
+    }
+  },
+  "require-dev": {
+    "ext-curl": "*",
+    "ext-json": "*",
+    "wpackagist-plugin/debug-bar": "^1.1.2",
+    "wpackagist-plugin/debug-bar-timber": "^1.0.8"
+  },
+  "require": {
+    "php": "^7.1",
+    "wpackagist-plugin/timber-library": "^1.18.2",
+    "wpackagist-plugin/admin-menu-editor": "^1.9.8",
+    "wpackagist-plugin/disable-gutenberg": "^2.3",
+    "wpackagist-plugin/webp-express": "^0.19.0",
+    "wpackagist-plugin/simple-custom-post-order": "^2.5.3",
+    "wpackagist-plugin/wordpress-seo": "^15.7",
+    "wpackagist-plugin/really-simple-ssl": "^4.0.7",
+    "wpackagist-plugin/advanced-custom-fields-nav-menu-field": "^2.0",
+    "wpackagist-plugin/acf-code-field": "^1.8",
+    "wpackagist-plugin/acf-image-aspect-ratio-crop": "^5.1.0",
+    "wpackagist-plugin/duplicate-post": "^4.1"
+  },
+  "extra": {
+    "installer-paths": {
+      "docker/volumes/wordpress/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ]
+    },
+    "wordpress-install-dir": "docker/volumes/wordpress/wp-content"
+  }
+}

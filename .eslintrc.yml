@@ -1,0 +1,32 @@
+root: true
+env:
+  browser: true
+  node: true
+parserOptions:
+  parser: @typescript-eslint/parser
+extends:
+  - twig
+  - prettier
+  - prettier/vue
+  - plugin:nuxt/recommended
+  - @nuxtjs
+  - @nuxtjs/eslint-config-typescript
+plugins:
+  - html
+  - prettier
+  - @typescript-eslint
+settings:
+  "html/html-extensions":
+    - .html
+    - .twig
+rules:
+  space-before-function-paren: off
+  arrow-parens:
+    - error
+    - as-needed
+  "@typescript-eslint/no-unused-vars": warn
+  no-useless-constructor: off
+  curly:
+    - off
+    - multi
+  no-unused-vars: off

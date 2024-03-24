@@ -1,0 +1,18 @@
+@import "../node_modules/normalize.css/normalize";
+@import "../node_modules/swiper/swiper-bundle.min.css";
+
+
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "general";
+@import "grid";
+@import "browser";
+@import 'animations';
+
+@import "parts/*";
+@import "components/*";
+@import "sections/*";
+@import "pages/*";
+
+

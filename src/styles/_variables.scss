@@ -1,0 +1,26 @@
+// Grid
+$min-width: 320px;
+$max-width: 1366px;
+$gap: 24px;
+$columns: 12;
+$breakpoints: xs false 576 xs, sm 576 768 sm, md 768 1024 md, lg 1024 1280 lg, xl 1280 1450 xl, xxl 1450 false xxl;
+$column-name: "column";
+$offset-name: "offset";
+
+// Spaces
+$space-between-desktop: 168px;
+$space-between-mobile: 128px;
+$padding-mobile: 12px;
+$padding-desktop: 24px;
+
+// Typo
+$base-font-size: 16px;
+$base-line-height: rem-calc(19px);
+$body-font-family: 'Soho Gothic Pro', 'Arial', sans-serif;
+$header-font-family: $body-font-family;
+
+// Primary colors
+$background: #B8C9DD;
+$lime: #CDF348;
+
+$white: #FFFFFF;

@@ -1,0 +1,13 @@
+// iOS font autoscale fix
+@media screen and (max-device-width: 480px) {
+  body {
+    -webkit-text-size-adjust: none;
+  }
+}
+
+// remove 'x' from input in IE browsers
+input {
+  &::-ms-clear {
+    display: none;
+  }
+}

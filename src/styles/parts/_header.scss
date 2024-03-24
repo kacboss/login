@@ -1,0 +1,62 @@
+.header {
+  text-align: center;
+  padding: 24px 0px;
+  background-color: #B8C9DD;
+  .row>.column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  svg {
+    max-width: 100%;
+    margin: 0;
+    display: block;
+  }
+  @include breakpoint(md down) {
+    padding: 12px 0px 8px;
+  }
+  &__logo {
+    display: block;
+    max-width: 120px;
+    @include breakpoint(md down) {
+      max-width: 100px;
+    }
+  }
+  &__menu {
+    list-style: none;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    &__item {
+      color: #304C6D;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 16.8px;
+      margin-right: 32px;
+      position: relative;
+      &.active {
+        color: #000000;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          width: 100%;
+          left: 0;
+          background-color: $lime;
+          height: 2px;
+        }
+      }
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+    &--right {
+      display: flex;
+      align-items: center;
+      .sign-in {
+        margin-right: 16px;
+      }
+    }
+  }
+}

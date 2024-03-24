@@ -1,0 +1,84 @@
+#!/bin/sh
+set +e
+# shellcheck disable=SC2039
+source .env
+STEPS=7
+# shellcheck disable=SC2153
+if [[ "$USE_DOMAIN" == true ]];
+then
+  USED_DOMAIN=$DOMAIN
+else
+  USED_DOMAIN="localhost"
+fi
+step () {
+  echo "\033[32;1m[$1/$STEPS] \033[0m$2"
+}
+
+echo "\033[7mProject \033[1m$COMPOSE_PROJECT_NAME\033[0m\033[7m (http://$USED_DOMAIN)\033[0m"
+
+step 1 "Download and run docker containers"
+docker-compose -p "$COMPOSE_PROJECT_NAME" up -d --build
+
+step 2 "Wordpress installation"
+docker-compose run --rm wpcli wp core install --path="/var/www/html" --url="http://$USED_DOMAIN" --title="$WORDPRESS_TITLE" --admin_user="$WORDPRESS_ADMIN_USER" --admin_password="$WORDPRESS_ADMIN_PASSWORD" --admin_email="$WORDPRESS_ADMIN_EMAIL"
+
+step 3 "Remove unused plugins"
+docker-compose run --rm wpcli plugin delete hello akismet
+
+step 4 "Remove basic themes"
+docker-compose run --rm wpcli theme delete twentyseventeen twentytwenty twentynineteen
+
+step 5 "Install plugins"
+if [[ "$WORDPRESS_WOOCOMMERCE" == true ]];
+then
+  step "5.1" "Install WooCommerce"
+  docker-compose run --rm wpcli plugin install woocommerce
+else
+  substep=0
+fi
+
+if [[ "$(ls -A plugins)" ]];
+then
+  ((substep+=1))
+  step "5.$substep" "Unpack zipped plugins"
+  for plugin in ./plugins/*.zip;
+  do
+    docker-compose run --rm wpcli plugin install "$plugin"
+  done
+fi
+
+if [[ ! -s plugins.txt ]];
+then
+  ((substep+=1))
+  step "5.$substep" "Install plugins listed in plugins.txt"
+  while read -r line;
+  do
+    if [[ ${line} ]];
+    then
+      docker-compose run --rm wpcli plugin install "$line"
+    fi
+  done < plugins.txt
+fi
+
+((substep+=1))
+step "5.$substep" "Install plugins from WPackagist"
+docker-compose run --rm composer upgrade
+
+step 6 "Activate plugins"
+docker-compose run --rm wpcli plugin activate --all
+
+step 7 "Activate theme"
+docker-compose run --rm wpcli theme activate "$WORDPRESS_THEME_NAME"
+step "7.1" "Rename theme name constants in functions.php and style.css"
+sed -i '' -e "s/APP_THEME_NAME/$WORDPRESS_THEME_NAME/g" "$WORDPRESS_THEME_LOCATION/style.css"
+
+
+open "http://$USED_DOMAIN"
+
+#step 8 "Install node dependencies"
+#docker-compose run --rm node npm install
+
+#step 9 "Run gulp + browsersync"
+#docker-compose run -p 3000:3000 --rm node gulp watch
+
+set -e

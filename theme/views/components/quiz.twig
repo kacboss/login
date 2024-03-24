@@ -1,0 +1,159 @@
+<div id="quiz" class="quiz">
+    <form class="quiz__form" data-action="ajaxQuiz">
+
+        <div class="quiz__step active" data-step="1">
+            <div class="quiz__step__title">Jaki urlop planujesz?</div>
+            <div class="quiz__step__counter">Pytanie 1 z 3</div>
+            <div class="quiz__step__answers">
+
+                <div class="answer">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <div class="text">
+                            <p>Relaks na plaży i przy basenie</p>
+                        </div>
+                        <img src="{{ theme.link ~ '/images/pool.jpg' }}" alt="relax">
+                        <input class="answer-input" type="radio" name="q1" value="relax" />
+                    </label>
+                </div>
+
+                <div class="answer" data-answer="Red">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <p>Eksplorowanie miasta i imprezowanie</p>
+                        <img src="{{ theme.link ~ '/images/nightlife.jpg' }}" alt="explore">
+                        <input class="answer-input" type="radio" name="q1" value="explore" />
+                    </label>
+                </div>
+
+                <div class="answer" data-answer="Red">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <p>Odkrywanie kultury i zabytków</p>
+                        <img src="{{ theme.link ~ '/images/city.png' }}" alt="discover">
+                        <input class="answer-input" type="radio" name="q1" value="discover" />
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="quiz__step" data-step="2">
+            <div class="quiz__step__title">Z kim chcesz wyruszyć w podróż?</div>
+            <div class="quiz__step__counter">Pytanie 2 z 3</div>
+            <div class="quiz__step__answers">
+
+                <div class="answer" data-answer="Red">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <div class="text">
+                            <p>Z rodziną</p>
+                        </div>
+                        
+                        <img src="{{ theme.link ~ '/images/family.jpg' }}" alt="family">
+                        <input class="answer-input" type="radio" name="q2" value="family" />
+                    </label>
+                </div>
+
+                <div class="answer" data-answer="Red">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <p>Z drugą połówką</p>
+                        <img src="{{ theme.link ~ '/images/couple.png' }}" alt="friend">
+                        <input  class="answer-input" type="radio" name="q2" value="friend" />
+                    </label>
+                </div>
+
+                <div class="answer" data-answer="Red">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <p>Z przyjaciółmi</p>
+                        <img src="{{ theme.link ~ '/images/friends.png' }}" alt="friends">
+                        <input class="answer-input" type="radio" name="q2" value="friends" />
+                    </label>
+                </div>
+
+                <div class="answer" data-answer="Red">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <p>Solo</p>
+                        <img src="{{ theme.link ~ '/images/solo.jpg' }}" alt="solo">
+                        <input class="answer-input" type="radio" name="q2" value="solo" />
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="step3" class="quiz__step" data-step="3">
+            <div class="quiz__step__title">Na kiedy planujesz wakacje?</div>
+            <div class="quiz__step__counter">Pytanie 3 z 3</div>
+            <div class="quiz__step__answers">
+
+                <div class="answer" data-answer="Red">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <div class="text">
+                            <p>Lato 2024. Czerwiec-sierpień </p>
+                        </div>
+                        
+                        <img src="{{ theme.link ~ '/images/summer.jpg' }}" alt="summer">
+                        <input class="answer-input" type="radio" name="q3" value="summer" />
+                    </label>
+                </div>
+
+                <div class="answer" data-answer="low">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <p>Niski sezon (wiosna/jesień)</p>
+                        <img src="{{ theme.link ~ '/images/low.jpg' }}" alt="low">
+                        <input  class="answer-input" type="radio" name="q3" value="low" />
+                    </label>
+                </div>
+
+                <div class="answer" data-answer="exotic">
+                    <label class="answer__label">
+                        <div class="is-checked">
+                            {% include "svg/checked.svg" %}
+                        </div>
+                        <p>Zima (egzotyka)</p>
+                        <img src="{{ theme.link ~ '/images/exotic.png' }}" alt="exotic">
+                        <input class="answer-input" type="radio" name="q3" value="exotic" />
+                    </label>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="quiz__footer">
+            <div class="quiz__footer__btn quiz__footer__btn--back data-back-step more-btn">Wróć</div>
+
+            <div class="quiz__footer__btn quiz__footer__btn--next btn disabled data-next-step">DALEJ</div>
+            <a href="" target="_blank" id="show-more-btn" class="quiz__footer__btn quiz__footer__btn--show btn">ZOBACZ OFERTY</a>
+        </div>
+    </form>
+
+</div>
