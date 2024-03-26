@@ -8,6 +8,10 @@
       align-items: center;
       gap: 16px;
       justify-content: center;
+      @include breakpoint(md down) {
+        gap: 12px;
+        margin-bottom: 30px;
+      }  
     }
     &__title {
       color: black;
@@ -15,6 +19,7 @@
       z-index: 33;
       span {
         position: relative;
+        display: inline-block;
           &:before {
             background-repeat: no-repeat;
             content: '';
@@ -23,8 +28,13 @@
             width: 80px;
             left: 44px;
             z-index: -1;
-            bottom: 19px;
-            background-image: url("data:image/svg+xml,%3Csvg width='93' height='81' viewBox='0 0 93 81' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.4707 76.6085L92.8713 54.9342L91.7786 50.8717L33.9139 62.3652L59.8931 9.40351L56.2481 7.30394L23.4577 56.3423L4.37495 0.525952L0.312048 1.61871L13.3648 67.3398L16.7788 80.0329L29.4734 76.6185L29.4707 76.6085Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");      
+            bottom: 9px;
+            background-image: url("data:image/svg+xml,%3Csvg width='93' height='81' viewBox='0 0 93 81' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.4707 76.6085L92.8713 54.9342L91.7786 50.8717L33.9139 62.3652L59.8931 9.40351L56.2481 7.30394L23.4577 56.3423L4.37495 0.525952L0.312048 1.61871L13.3648 67.3398L16.7788 80.0329L29.4734 76.6185L29.4707 76.6085Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");   
+            @include breakpoint(md down) {
+              left: 19px;
+              bottom: -6px;
+              scale: .7;
+            }   
           }
           &:after {
             background-repeat: no-repeat;
@@ -33,9 +43,10 @@
             position: absolute;
             width: 100%;
             left: 0px;
-            z-index: 7px;
-            bottom: 7px;
+            z-index: 7;
+            bottom: -2px;
             background-image: url("data:image/svg+xml,%3Csvg width='206' height='8' viewBox='0 0 206 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M206 4L0 0V8H206V4Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+      
           }
         }
 
@@ -44,6 +55,9 @@
       max-width: 1018px;
       margin: auto;
       margin-top: 72px;
+      @include breakpoint(md down) {
+        margin-top: 40px;
+      }
     }
     .body-medium {
       max-width: 902px;
@@ -51,9 +65,21 @@
     }
     &__spark {
       display: flex;
-      position: absolute;
-      bottom: 0;
-      right: 0;
+      svg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        max-height: 70%;
+        width: auto;
+        @include breakpoint(md down) {
+          max-height: 40%;
+          width: auto;
+        }
+        @include breakpoint(sm down) {
+          max-height: 27%;
+        }
+      }
+
     }
     &__image {
       position: relative;
@@ -106,6 +132,7 @@
       color: black;
       span {
         position: relative;
+        display: inline-block;
           &:before {
             background-repeat: no-repeat;
             content: '';
@@ -115,8 +142,14 @@
             width: 64px;
             right: 0;
             z-index: -1;
-            bottom: 19px;
-            background-image: url("data:image/svg+xml,%3Csvg width='93' height='81' viewBox='0 0 93 81' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.4707 76.6085L92.8713 54.9342L91.7786 50.8717L33.9139 62.3652L59.8931 9.40351L56.2481 7.30394L23.4577 56.3423L4.37495 0.525952L0.312048 1.61871L13.3648 67.3398L16.7788 80.0329L29.4734 76.6185L29.4707 76.6085Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");      
+            bottom: 16px;
+            background-image: url("data:image/svg+xml,%3Csvg width='93' height='81' viewBox='0 0 93 81' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.4707 76.6085L92.8713 54.9342L91.7786 50.8717L33.9139 62.3652L59.8931 9.40351L56.2481 7.30394L23.4577 56.3423L4.37495 0.525952L0.312048 1.61871L13.3648 67.3398L16.7788 80.0329L29.4734 76.6185L29.4707 76.6085Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+            @include breakpoint(md down) {
+              scale: .7;
+              background-size: contain;
+              bottom: -9px;
+              right: -8px;
+            }      
           }
           &:after {
             background-repeat: no-repeat;
@@ -126,9 +159,13 @@
             width: 100%;
             left: 0px;
             z-index: 7px;
-            bottom: 7px;
+            bottom: 0px;
             transform: scaleX(-1);
             background-image: url("data:image/svg+xml,%3Csvg width='206' height='8' viewBox='0 0 206 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M206 4L0 0V8H206V4Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+            @include breakpoint(md down) {
+              height: 6px;
+              bottom: -3px;
+            }   
           }
       }
     }
@@ -146,6 +183,9 @@
         padding: 48px 48px 24px 48px;
         display: flex;
         align-items: center;
+        @include breakpoint(sm down) {
+          padding: 24px;
+        }
         &__text {
           text-align: left;
           margin-left: 16px;
@@ -154,12 +194,19 @@
           font-size: 24px;
           font-weight: 600;
           line-height: 28.8px;
+          @include breakpoint(sm down) {
+            font-size: 20px;
+            line-height: 26px;
+          }
         }
       }
 
       &__text {
         text-align: left;
         padding: 0px 48px 48px 48px;
+        @include breakpoint(sm down) {
+          padding: 0px 24px 24px 24px;
+        }
       }
     }
     &__header {
@@ -168,6 +215,10 @@
       margin: auto;
       padding-top: 120px;
       margin-bottom: 72px;
+      @include breakpoint(md down) {
+        padding-top: 50px;
+        margin-bottom: 40px;
+      }
       &__icon {
         display: flex;
         align-items: center;
@@ -178,7 +229,9 @@
       display: flex;
       position: relative;
       margin-bottom: 200px;
-
+      @include breakpoint(sm down) {
+        flex-direction: column;
+      }
       .tl {
         width: 100%;
         height: 39%;
@@ -257,26 +310,56 @@
       .left {
         width: 41%;
         margin-right: 12px;
+        @include breakpoint(sm down) {
+          width: 100%;
+          margin-right: 0px;
+          margin-bottom: 24px;
+        }
         .box:first-child {
           height: 50%;
           margin-bottom: 5%;
+          @include breakpoint(sm down) {
+            height: auto;
+            margin-bottom: 24px;
+          }
         }
         .box:nth-child(2) {
           height: 47.5%;
+          @include breakpoint(sm down) {
+            height: auto;
+          }
         }
       }
       .right {
         width: 60%;
         margin-left: 12px;
+        @include breakpoint(sm down) {
+          width: 100%;
+          margin-left: 0px;
+        }
         .box:first-child {
           height: 60%;
           margin-bottom: 24px;
+          @include breakpoint(sm down) {
+            height: auto;
+          }
         }
         .box:nth-child(2) {
           display: flex;
           height: 37.5%;
+          @include breakpoint(sm down) {
+            flex-direction: column;
+            height: auto;
+            .box__text {
+              padding-bottom: 0px;
+              margin-bottom: -20px;
+            }
+          }
           .left {
             width: 50%;
+            @include breakpoint(sm down) {
+              width: 100%;
+            }
           }
         }
       }
@@ -287,6 +370,9 @@
   padding: 140px 0px 120px 0px;
   position: relative;
   margin-top: -220px;
+  @include breakpoint(sm down) {
+    margin-top: -260px;
+  }
   .section-title {
     color: black;
   }
@@ -319,6 +405,9 @@
   .boxes {
     .left, .right {
       width: 50%;
+      @include breakpoint(sm down) {
+        width: 100%;
+      }
     }
   }
   &__arrow {
@@ -333,13 +422,26 @@
     }
   }
   &__spark {
-    position: absolute;
-    left: 0;
-    top: 0;
+
+    svg {
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include breakpoint(sm down) {
+        max-height: 8%;
+        width: auto;
+      }
+
+    }
+
   }
   >.row>.column {
     position: relative;
     padding-top: 120px;
+    @include breakpoint(sm down) {
+      padding-top: 70px;
+    }
     &:before {
       content: '';
       width: 100%;
@@ -356,11 +458,15 @@
     text-align: center;
     margin-bottom: 66px;
     color: black;
+    @include breakpoint(sm down) {
+      margin-bottom: 30px;
+    }   
     .section-title {
       position: relative;
       z-index: 33;
       span {
         position: relative;
+        display: inline-block;
         &:before {
           background-repeat: no-repeat;
           content: '';
@@ -369,9 +475,15 @@
           width: 64px;
           left: 27px;
           z-index: -1;
-          bottom: 20px;
+          bottom: 17px;
           transform: scaleX(-1);
           background-image: url("data:image/svg+xml,%3Csvg width='71' height='66' viewBox='0 0 71 66' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M64.8462 54.7618L70.596 1.46856L67.2814 0.885462L56.0258 46.7198L26.4297 9.96133L23.674 11.8928L48.1206 52.2604L1.20223 47.1992L0.619064 50.5142L52.6759 63.2988L63.0323 65.1207L64.8544 54.7632L64.8462 54.7618Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+          @include breakpoint(sm down) {
+            background-size: contain;
+            scale: .6;
+            bottom: -7px;
+            left: 0px;
+          }   
         }
         &:after {
           content: '';
@@ -380,9 +492,14 @@
           width: 100%;
           left: 0;
           z-index: -1;
-          bottom: 7px;
+          bottom: 5px;
           background-repeat: no-repeat;
-          background-image: url("data:image/svg+xml,%3Csvg width='236' height='8' viewBox='0 0 236 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M236 4L0 0V8H236V4Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");        }
+          background-image: url("data:image/svg+xml,%3Csvg width='236' height='8' viewBox='0 0 236 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M236 4L0 0V8H236V4Z' fill='%23CDF348'/%3E%3C/svg%3E%0A"); 
+          @include breakpoint(sm down) {
+            height: 6px;
+            bottom: 0;
+          }       
+        }
       }
     }
     .h5 {
@@ -393,8 +510,14 @@
     display: flex;
     gap: 24px;
     text-align: left;
+    @include breakpoint(sm down) {
+      flex-direction: column;
+    }     
     .left {
       margin-top: 72px;
+      @include breakpoint(sm down) {
+        margin-top: 20px;
+      }   
     }
     &__item {
       display: flex;
@@ -402,22 +525,49 @@
       border-radius: 12px;
       min-height: 376px;
       margin-bottom: 24px;
+      @include breakpoint(sm down) {
+        flex-direction: column;
+      }   
       &:last-child {
         margin-bottom: 0px;
       }
       &__info {
         padding: 48px;
         width: 50%;
+        @include breakpoint(lg down) {
+          padding: 24px;
+        }  
+        @include breakpoint(sm down) {
+          padding: 24px;
+          width: 100%;
+        }  
         &__header {
           display: flex;
           align-items: center;
           margin-bottom: 24px;
+          @include breakpoint(sm down) {
+            margin-bottom: 16px;
+          }  
+          &:after {
+            content: '';
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_8613_3670)'%3E%3Cpath d='M6 13L11 8L6 3' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_8613_3670'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+            width: 16px;
+            height: 16px;
+            margin-left: 4px;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
           .icon {
             display: flex;
           }
           .title {
             color: black;
             margin-left: 16px;
+            @include breakpoint(lg down) {
+              margin-left: 10px;
+              font-size: 20px;
+            }  
           }
         }
         .text {
@@ -433,12 +583,21 @@
       }
       &__image {
         width: 50%;
+        @include breakpoint(sm down) {
+          width: 100%;
+        }  
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           border-top-right-radius: 12px;
           border-bottom-right-radius: 12px;
+          @include breakpoint(sm down) {
+            border-bottom-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-top-right-radius: 0px;
+
+          }  
         }
       }
     }
@@ -447,10 +606,16 @@
 .clients {
   background-color: #B8C9DD;
   padding: 120px 0px;
+  @include breakpoint(sm down) {
+    padding: 70px 0px;
+  }   
   .h5 {
     margin-bottom: 48px;
     text-align: center;
     color: black;
+    @include breakpoint(sm down) {
+      margin-bottom: 38px;
+    }  
   }
   &__list {
     max-width: 1134px;
@@ -458,6 +623,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 24px;
+    @include breakpoint(sm down) {
+      grid-template-columns: 1fr 1fr;
+    }  
     &__item {
       height: 64px;
       display: flex;
@@ -466,6 +634,8 @@
       img {
         opacity: .7;
         filter: grayscale(100%);
+        width: 100px;
+        max-width: 100px;
       }
     }
   }
@@ -475,6 +645,9 @@
   background-color: #B8C9DD;
   padding-bottom: 125px;
   position: relative;
+  @include breakpoint(sm down) {
+    padding-bottom: 65px;
+  } 
   &__arrow {
     svg {
       position: absolute;
@@ -489,26 +662,38 @@
   }
   .section-title {
     margin: auto;
-    max-width: 748px;
+    max-width: 790px;
     text-align: center;
     position: relative;
     z-index: 33;
     color: #000000;
     margin-bottom: 120px;
+    @include breakpoint(sm down) {
+      margin-bottom: 50px;
+    } 
     span {
       position: relative;
+      display: inline-block;
       &:before {
         background-repeat: no-repeat;
         content: '';
         height: 64px;
         position: absolute;
         width: 100%;
-        left: 23px;
+        left: 39px;
         z-index: -1;
-        top: -29px;
+        top: -19px;
+        background-repeat: no-repeat;
         background-image: url("data:image/svg+xml,%3Csvg width='71' height='66' viewBox='0 0 71 66' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M64.8462 54.7618L70.596 1.46856L67.2814 0.885462L56.0258 46.7198L26.4297 9.96133L23.674 11.8928L48.1206 52.2604L1.20223 47.1992L0.619064 50.5142L52.6759 63.2988L63.0323 65.1207L64.8544 54.7632L64.8462 54.7618Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+        @include breakpoint(md down) {
+          scale: .7;
+          background-size: contain;
+          left: 8px;
+          top: -29px;
+        }   
       }
       &:after {
+        background-repeat: no-repeat;
         content: '';
         height: 8px;
         position: absolute;
@@ -517,6 +702,9 @@
         z-index: -1;
         bottom: 0;
         background-image: url("data:image/svg+xml,%3Csvg width='132' height='8' viewBox='0 0 132 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4L132 0V8H0V4Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+        @include breakpoint(sm down) {
+          height: 6px;
+        } 
       }
     }
   }
@@ -524,7 +712,13 @@
     display: flex;
     gap: 24px;
     position: relative;
+    @include breakpoint(sm down) {
+      flex-direction: column;
+    } 
     &__back {
+      @include breakpoint(sm down) {
+        display: none;
+      } 
       svg {
         position: absolute;
         bottom: 99%;
@@ -542,6 +736,9 @@
       border-radius: 12px;
       padding: 48px 40px;
       text-align: left;
+      @include breakpoint(sm down) {
+        padding: 24px 20px;
+      } 
       .title {
         margin: 24px 0px 8px;
         font-family: Inter;
@@ -560,9 +757,15 @@
 }
 .integrations {
   padding: 120px 0px;
+  @include breakpoint(sm down) {
+    padding: 70px 0px;
+  } 
   .pre-title {
     position: relative;
     .lines {
+      @include breakpoint(sm down) {
+        display: none;
+      } 
       svg {
         position: absolute;
         bottom: 99%;
@@ -601,13 +804,19 @@
     max-width: 1366px;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 32px 24px;
+    @include breakpoint(sm down) {
+      grid-template-columns: 1fr 1fr;
+    } 
     &__item {
       height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
+      img {
+        max-width: 100px;
+      }
     }
   }
 }
@@ -628,6 +837,42 @@
   .section-title {
     color: white;
     margin-bottom: 24px;
+    position: relative;
+    z-index: 33;
+    .span1 {
+      position: relative;
+      &:after {
+        background-repeat: no-repeat;
+        content: '';
+        height: 8px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        z-index: -1;
+        bottom: 2px;
+        background-image: url("data:image/svg+xml,%3Csvg width='210' height='8' viewBox='0 0 210 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M210 4L0 0V8H210V4Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");   
+        @include breakpoint(sm down) {
+          height: 6px;
+        } 
+      }
+    }
+    .span2 {
+      position: relative;
+      &:after {
+        background-repeat: no-repeat;
+        content: '';
+        height: 8px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        z-index: -1;
+        bottom: 2px;
+        background-image: url("data:image/svg+xml,%3Csvg width='187' height='8' viewBox='0 0 187 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4L187 0V8H0V4Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+        @include breakpoint(sm down) {
+          height: 6px;
+        } 
+      }
+    }
   }
   .body-medium {
     color: #ffffff94;
@@ -640,12 +885,19 @@
     position: relative;
     color: white;
     background-color: #243837;
-
+    @include breakpoint(sm down) {
+      padding: 80px 0px;
+    } 
     .spark-left {
       svg {
         position: absolute;
         top: 0;
         left: 0;
+        @include breakpoint(sm down) {
+          max-height: 21%;
+          width: auto;
+        } 
+
       }
     }
     .spark-right {
@@ -654,6 +906,10 @@
         bottom: 0;
         right: 0;
         z-index: 1003;
+        @include breakpoint(sm down) {
+          max-height: 21%;
+          width: auto;
+        } 
       }
     }
   }
@@ -662,9 +918,15 @@
     position: relative;
     .swiper-nav {
       margin-bottom: 288px;
+      @include breakpoint(sm down) {
+        margin-bottom: 80px;
+      } 
     }
     &__arrow {
       padding-top: 120px;
+      @include breakpoint(sm down) {
+        padding-top: 70px;
+      } 
       svg {
         position: absolute;
         left: 0;
@@ -677,6 +939,22 @@
     }
     .section-title {
       margin-bottom: 16px;
+      position: relative;
+      z-index: 33;
+      span {
+        position: relative;
+        &:after {
+          background-repeat: no-repeat;
+          content: '';
+          height: 8px;
+          position: absolute;
+          width: 100%;
+          left: 2px;
+          z-index: -1;
+          bottom: 2px;
+          background-image: url("data:image/svg+xml,%3Csvg width='134' height='8' viewBox='0 0 134 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M134 4L0 0V8H134V4Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+        }
+      }
     }
   }
 
@@ -705,3 +983,8 @@
   margin-bottom: 24px;
 }
 
+
+.gsap-marker-end, .gsap-marker-start, .gsap-marker-scroller-end, .gsap-marker-scroller-start {
+  opacity: 0 !important;
+  visibility: hidden;
+}

@@ -85,6 +85,11 @@ main {
   align-items: center;
   position: relative;
   z-index: 1111;
+  @include breakpoint(md down) {
+    font-size: 15px;
+    line-height: 18px;
+    padding: 14px 14px 14px 22px;
+  }
   svg {
     margin-left: 8px !important;
   }
@@ -115,6 +120,10 @@ section, .section {
   font-size: 64px;
   font-weight: 500;
   line-height: 64px;
+  @include breakpoint(md down) {
+    font-size: 46px;
+    line-height: 46px;
+  }
 }
 .body-medium {
   font-family: Inter;
@@ -122,6 +131,10 @@ section, .section {
   font-weight: 500;
   line-height: 25.2px;
   text-align: center;
+  @include breakpoint(md down) {
+    font-size: 16px;
+    line-height: 23.2px;
+  }
 }
 .p-medium {
   font-family: Inter;
@@ -135,6 +148,10 @@ section, .section {
   font-weight: 500;
   line-height: 53.76px;
   color: black;
+  @include breakpoint(md down) {
+    font-size: 30px;
+    line-height: 33px;
+  }
 }
 
 .h5 {
@@ -142,6 +159,10 @@ section, .section {
   font-size: 32px;
   font-weight: 500;
   line-height: 38.4px;
+  @include breakpoint(sm down) {
+    font-size: 24px;
+    line-height: 30px;
+  }   
 }
 .h7 {
   font-family: 'PPTelegraf', sans-serif;
@@ -149,6 +170,10 @@ section, .section {
   font-weight: 600;
   line-height: 28.8px;
   text-align: left;
+  @include breakpoint(sm down) {
+    font-size: 20px;
+    line-height: 24px;
+  }   
 }
 
 .reviews {
@@ -223,4 +248,116 @@ section, .section {
     }
 
   }
+}
+
+.body-no-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.open-menu {
+  margin-right: -10px;
+  display: none;
+  width: 60px;
+  height: 45px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg) scale(0.5);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  @include breakpoint(md down) {
+    display: inline-block;
+  }
+  span {
+      display: block;
+      position: absolute;
+      height: 7px;
+      width: 100%;
+      background: black;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .25s ease-in-out;
+      -moz-transition: .25s ease-in-out;
+      -o-transition: .25s ease-in-out;
+      transition: .25s ease-in-out;
+  }
+}
+.open-menu span:nth-child(1) {
+  top: 0px;
+}
+.open-menu span:nth-child(2),.open-menu span:nth-child(3) {
+  top: 18px;
+}
+.open-menu span:nth-child(4) {
+  top: 36px;
+}
+.open-menu.active span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+.open-menu.active span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.open-menu.active span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.open-menu.active span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+.mobile-menu {
+  position: fixed;
+  top: 100px;
+  width: 100vw;
+  height: 100%;
+  left: -100vw;
+  background:#b8c9dd;
+  transition: 0.4s;
+  opacity: 0;
+  z-index: 33333;
+  padding: 0px 12px;
+  &.active {
+      opacity: 1;
+      left: 0;
+      
+  }
+  .main-menu {
+      width: 100%;
+      padding-top: 10rem;
+      ul {
+          list-style: none;
+          font-size: 18px;
+          color: white;
+          width: 100%;
+          a {
+              color: white;
+              display: block;
+              padding: 20px 0px;
+              text-align: center;
+              font-size: 4rem;
+          }
+      }
+  }
+
 }

@@ -9,6 +9,9 @@
  color: #6D7D8E;
  position: relative;
  z-index: 3333;
+ @include breakpoint(md down) {
+  padding: 60px 0px 50px;
+ } 
  &__arrow {
   svg {
     position: absolute;
@@ -37,6 +40,15 @@
   color: black;
   position: relative;
   z-index: 44;
+  @include breakpoint(md down) {
+    font-size: 56px;
+    line-height: 56px;
+    margin-bottom: 35px;
+  } 
+  @include breakpoint(sm down) {
+    font-size: 36px;
+    line-height: 44px;
+  } 
   span {
     position: relative;
     &:before {
@@ -49,6 +61,17 @@
       z-index: -1;
       bottom: 22px;
       background-image: url("data:image/svg+xml,%3Csvg width='93' height='81' viewBox='0 0 93 81' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M29.4702 76.6085L92.8708 54.9342L91.7781 50.8717L33.9134 62.3652L59.8926 9.40351L56.2476 7.30394L23.4572 56.3423L4.37446 0.525952L0.31156 1.61871L13.3643 67.3398L16.7783 80.0329L29.4729 76.6185L29.4702 76.6085Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+      @include breakpoint(md down) {
+        bottom: -1px;
+        right: 52px;
+        scale: 0.8;
+        background-size: contain;
+      } 
+      @include breakpoint(md down) {
+        bottom: -8px;
+        right: 18px;
+        scale: 0.6;
+      } 
     }
     &:after {
       content: '';
@@ -59,6 +82,9 @@
       z-index: -1;
       bottom: 12px;
       background-image: url("data:image/svg+xml,%3Csvg width='472' height='8' viewBox='0 0 472 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M472 4L0 0V8H472V4Z' fill='%23CDF348'/%3E%3C/svg%3E%0A");
+      @include breakpoint(md down) {
+        bottom: 6px;
+      } 
     }
   }
   }
@@ -66,17 +92,34 @@
     display: flex;
     align-items: center;
     padding-bottom: 120px;
+    @include breakpoint(md down) {
+      flex-direction: column;
+      align-items: baseline;
+      padding-bottom: 70px;
+    } 
     &--left {
       padding-right: 5%;
       width: 69%;
+      @include breakpoint(md down) {
+        width: 100%;
+        padding-right: 0px;
+      } 
     }
     &--right {
       width: 30%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @include breakpoint(md down) {
+        width: 100%;
+        padding-left: 20px;
+        max-width: 400px;
+      } 
       .footer-animation {
         position: relative;
+        @include breakpoint(sm down) {
+         scale: 0.7;
+        } 
         .hand {
           position: absolute;
           bottom: -35px;
@@ -145,6 +188,9 @@
     &__row {
       display: flex;
       gap: 24px;
+      @include breakpoint(md down) {
+        flex-direction: column;
+      } 
       .text-wrapper {
         display: flex;
         gap: 24px;
@@ -154,10 +200,29 @@
       }
       &--left {
         width: 50%;
+        @include breakpoint(md down) {
+          width: 100%;
+        } 
 
       }
       &--right {
         width: 50%;
+        @include breakpoint(md down) {
+          width: 100%;
+        } 
+        .footer-section-title {
+          display: flex;
+          align-items: center;
+          &:after {
+            content: '';
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 9.75L8.25 6L4.5 2.25' stroke='%23395577' stroke-width='1.05' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");            width: 12px;
+            height: 12px;
+            margin-left: 8px;
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
       }
     }
   }

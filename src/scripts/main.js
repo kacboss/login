@@ -76,7 +76,7 @@ const app = {
 				scrollTrigger: {
 				  trigger: section,
 				  start: "bottom bottom-=20%", // Animation starts when the top of trigger hits the bottom of viewport
-				  end: "+=400px", // Animation ends when the bottom of trigger hits the top of viewport
+				  end: "+=600px", // Animation ends when the bottom of trigger hits the top of viewport
 				  scrub: true, // Smooth scrubbing
 				  markers: true, // Uncomment this line to see start/end markers
 				}
@@ -109,7 +109,7 @@ const app = {
 		if (section) {
 
 			var swiper1 = new Swiper('.reviews1', {
-				slidesPerView: 3,
+				slidesPerView: 1,
 				watchSlidesProgress: true,
 				spaceBetween: 24,
 				navigation: {
@@ -118,17 +118,48 @@ const app = {
 				  },
 				  preventInteractionOnTransition: true,
 
+				  breakpoints: {
+					// when window width is >= 320px
+					120: {
+					  slidesPerView: 1.1,
+					  spaceBetween: 20
+					},
+					640: {
+					  slidesPerView: 2,
+					  spaceBetween: 40
+					},
+					1046: {
+						slidesPerView: 3,
+						spaceBetween: 40
+					  }
+				  }
+
 			});
 		
 			var swiper2 = new Swiper('.reviews2', {
-				slidesPerView: 4,
+				slidesPerView: 1,
 				watchSlidesProgress: true,
 				spaceBetween: 24,
 				navigation: {
 					nextEl: ".swiper-button-next",
 					prevEl: ".swiper-button-prev",
 				  },
-				  preventInteractionOnTransition: true,
+				preventInteractionOnTransition: true,
+				breakpoints: {
+					// when window width is >= 320px
+					120: {
+					  slidesPerView: 1.1,
+					  spaceBetween: 20
+					},
+					640: {
+					  slidesPerView: 2,
+					  spaceBetween: 40
+					},
+					1046: {
+						slidesPerView: 4,
+						spaceBetween: 40
+					  }
+				  }
 
 			});
 		
@@ -180,6 +211,24 @@ const app = {
 		observer.observe(document.querySelector('.login'));
 		*/
 	},
+
+	showMobileMenu: () => {
+
+		let mobileMenu = document.querySelector('.mobile-menu');
+		let hamburger = document.querySelector('#opener');
+
+
+		if (hamburger) {
+
+				hamburger.addEventListener('click', () => {
+					mobileMenu.classList.toggle('active');
+					hamburger.classList.toggle('active');
+					document.body.classList.toggle('body-no-scroll');
+				});
+
+
+			}
+	},
 	
 
 
@@ -194,7 +243,7 @@ const app = {
 		app.reviews();
 		app.body();
 		app.secAnimation();
-
+		app.showMobileMenu();
 	}
 };
 
