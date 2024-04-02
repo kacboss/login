@@ -6,6 +6,45 @@ import Animations from "./Animations";
 import InView from 'InView';
 
 const app = {
+
+	book: () => {
+		let btns = document.querySelectorAll('.book-btn');
+		let form = document.querySelector('.book');
+		let exit = document.querySelector('.exit');
+		let exit_mobile = document.querySelector('.exit-mobile');
+
+		let body = document.body;
+
+
+		if (btns) {
+            btns.forEach(btn => {
+                btn.addEventListener('click', function(event) {
+                    // Prevent default button click behavior
+                    event.preventDefault();
+                    // Add 'active' class to the form when any 'book-btn' is clicked
+                    form.classList.add('active');
+					body.classList.add('body-no-scroll');
+
+                });
+            });
+			exit.addEventListener('click', function() {
+                // Remove 'active' class from the form when 'exit' is clicked
+                form.classList.remove('active');
+				body.classList.remove('body-no-scroll');
+
+            });
+
+			exit_mobile.addEventListener('click', function() {
+                // Remove 'active' class from the form when 'exit' is clicked
+                form.classList.remove('active');
+				body.classList.remove('body-no-scroll');
+
+            });
+
+		}
+
+	},
+
 	getValidationConfig: () => {
 
 		Pristine.addValidator(
@@ -101,6 +140,43 @@ const app = {
 			  });
 
 		  } 
+	},
+
+
+
+	customers: () => {
+		let section = document.querySelector('.customers-baner__swiper');
+
+		if (section) {
+
+			var swiper1 = new Swiper('.customers-baner__swiper', {
+				slidesPerView: 6,
+				watchSlidesProgress: true,
+				spaceBetween: 24,
+
+				preventInteractionOnTransition: true,
+
+				  breakpoints: {
+					// when window width is >= 320px
+					120: {
+					  slidesPerView: 3,
+					  spaceBetween: 20
+					},
+					640: {
+					  slidesPerView: 3,
+					  spaceBetween: 24
+					},
+					1046: {
+						slidesPerView: 6,
+						spaceBetween: 24
+					  }
+				  }
+
+			});
+	
+
+		}	
+
 	},
 
 	reviews: () => {
@@ -229,6 +305,18 @@ const app = {
 
 			}
 	},
+
+	isScrolled: function() {
+
+		let scrolled = window.scrollY || document.documentElement.scrollTop,
+				body = document.querySelector('body');
+
+		if (scrolled > 30 ) {
+				body.setAttribute('data-scrolled','true');
+		} else {
+				body.setAttribute('data-scrolled','false');
+		}
+	},
 	
 
 
@@ -236,6 +324,7 @@ const app = {
 	},
 	
 	onScroll: () => {
+		app.isScrolled();
 	},
 	
 	init: () => {
@@ -244,6 +333,8 @@ const app = {
 		app.body();
 		app.secAnimation();
 		app.showMobileMenu();
+		app.book();
+		app.customers();
 	}
 };
 

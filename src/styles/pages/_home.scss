@@ -54,9 +54,9 @@
     .baner-wrapper {
       max-width: 1018px;
       margin: auto;
-      margin-top: 72px;
+      margin-top: 172px;
       @include breakpoint(md down) {
-        margin-top: 40px;
+        margin-top: 140px;
       }
     }
     .body-medium {

@@ -97,6 +97,17 @@ main {
     background-color: #243837;
     color: white;
     padding: 16px 24px;
+    @include breakpoint(md down) {
+      padding: 14px 24px;
+
+    }
+  }
+
+  &--light {
+    background-color: unset;
+    color: #304C6D;
+    padding: 16px 24px;
+    border: 2px solid #D4DFEB;
   }
 }
 .rwd-pd {
@@ -123,6 +134,17 @@ section, .section {
   @include breakpoint(md down) {
     font-size: 46px;
     line-height: 46px;
+  }
+}
+.h4 {
+  font-family: 'PPTelegraf', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 44.8px;
+  text-align: left;
+  @include breakpoint(md down) {
+    font-size: 22px;
+    line-height: 25px;
   }
 }
 .body-medium {
@@ -328,7 +350,7 @@ section, .section {
 }
 .mobile-menu {
   position: fixed;
-  top: 100px;
+  top: 65px;
   width: 100vw;
   height: 100%;
   left: -100vw;
@@ -360,4 +382,39 @@ section, .section {
       }
   }
 
+}
+
+
+.review__footer {
+  display: flex;
+  align-items: center;
+  &__image {
+    display: flex;
+    margin-right: 16px;
+  }
+  &__sign {
+    .name {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16.8px;
+      margin-bottom: 4px;
+    }
+    .role {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 18.48px;
+      text-align: left;
+    }
+  }
+}
+
+.sygnet {
+  display: inline-flex;
+  align-items: center;
+  @include breakpoint(md down) {
+    svg {
+      max-width: 22px;
+    }
+
+  }
 }

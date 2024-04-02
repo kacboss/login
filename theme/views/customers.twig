@@ -1,0 +1,165 @@
+{% include "parts/header.twig" %}
+{% include "components/form.twig" %}
+
+<section class="customers-baner">
+    <div class="customers-baner__arrow">
+        {% include "views/svg/arrow-top.svg" %}
+      </div>
+    <div class="row">
+        <div class="column">
+            <div class="h4">For our customers, Logintrade has powered
+                savings and counting of
+            </div>
+            <div class="number-wrapper">
+                <div class="number">
+                    <img class="star-left" src="{{ theme.link ~ '/images/starc.svg' }}" alt="">
+                    <img class="star-right" src="{{ theme.link ~ '/images/starc.svg' }}" alt="">
+    
+                    $16,061,365
+                </div>
+            </div>
+
+
+            <div class="customers-baner__swiper">
+                <div class="customers-baner__swiper__title">our selected customers</div>
+                <div class="swiper-wrapper">
+       
+                    <a target="_blank" href="https://www.smithfieldfoods.com/" class="swiper-slide">
+                        <img src="{{ theme.link ~ '/images/sf.svg' }}" alt="">
+                    </a>
+
+                    <a target="_blank" href="https://www.smithfieldfoods.com/" class="swiper-slide">
+                        <img src="{{ theme.link ~ '/images/sf.svg' }}" alt="">
+                    </a>
+
+                    <a target="_blank" href="https://www.smithfieldfoods.com/" class="swiper-slide">
+                        <img src="{{ theme.link ~ '/images/sf.svg' }}" alt="">
+                    </a>
+
+                    <a target="_blank" href="https://www.smithfieldfoods.com/" class="swiper-slide">
+                        <img src="{{ theme.link ~ '/images/sf.svg' }}" alt="">
+                    </a>
+
+                    <a target="_blank" href="https://www.smithfieldfoods.com/" class="swiper-slide">
+                        <img src="{{ theme.link ~ '/images/sf.svg' }}" alt="">
+                    </a>
+
+                    <a target="_blank" href="https://www.smithfieldfoods.com/" class="swiper-slide">
+                        <img src="{{ theme.link ~ '/images/sf.svg' }}" alt="">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="customers-baner__spark">
+        {% include "views/svg/spark-right-bottom.svg" %}
+      </div>
+  
+</section>
+
+<section class="customers-stories">
+    <div class="row">
+        <div class="column">
+            <div class="section-title" data-fx="fadeInUpSmall">Our customers <span>success</span> stories</div>
+            <div class="body-medium" data-fx="fadeInUpSmall">
+                Learn more about how our customers use Logintrade to power savings and counting.
+            </div>
+            <div class="stories">
+                <div class="box left"></div>
+                <div class="box right"></div>
+
+                <div class="stories__item" data-fx="fadeInUpSmall">
+                    <a href="" class="stories__item__header">
+                        <img src="{{ theme.link ~ '/images/barrys.svg' }}" alt="">
+                        {% include "views/svg/arr-right.svg" %}
+                    </a>
+                    <div class="stories__item__text">
+                        Barry’s powers nearly 100% of outbound pipeline with Logintrade
+                    </div>
+
+                    <div class="stories__item__footer review__footer">
+                        <div class="review__footer">
+                            <div class="review__footer__image">
+                                <img src="{{ theme.link ~ '/images/rev.svg' }}" alt="">
+            
+                            </div>
+                            <div class="review__footer__sign">
+                                <div class="name">Christopher Thompson</div>
+                                <div class="role">Budget Planner</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="stories__item" data-fx="fadeInUpSmall">
+                    <a href="" class="stories__item__header">
+                        <img src="{{ theme.link ~ '/images/barrys.svg' }}" alt="">
+                        {% include "views/svg/arr-right.svg" %}
+                    </a>
+                    <div class="stories__item__text">
+                        Barry’s powers nearly 100% of outbound pipeline with Logintrade
+                    </div>
+
+                    <div class="stories__item__footer review__footer">
+                        <div class="review__footer">
+                            <div class="review__footer__image">
+                                <img src="{{ theme.link ~ '/images/rev.svg' }}" alt="">
+            
+                            </div>
+                            <div class="review__footer__sign">
+                                <div class="name">Christopher Thompson</div>
+                                <div class="role">Budget Planner</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="stories__item" data-fx="fadeInUpSmall">
+                    <a href="" class="stories__item__header">
+                        <img src="{{ theme.link ~ '/images/barrys.svg' }}" alt="">
+                        {% include "views/svg/arr-right.svg" %}
+                    </a>
+                    <div class="stories__item__text">
+                        Barry’s powers nearly 100% of outbound pipeline with Logintrade
+                    </div>
+
+                    <div class="stories__item__footer review__footer">
+                        <div class="review__footer">
+                            <div class="review__footer__image">
+                                <img src="{{ theme.link ~ '/images/rev.svg' }}" alt="">
+            
+                            </div>
+                            <div class="review__footer__sign">
+                                <div class="name">Christopher Thompson</div>
+                                <div class="role">Budget Planner</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="customers-reviews">
+    <div class="row">
+        <div class="column">
+            <div class="section-title" data-fx="fadeInUpSmall">More <span>testimonials</span> from our customers</div>
+            <div class="body-medium" data-fx="fadeInUpSmall">
+                Don't take our word for it, take theirs.
+            </div>
+            <div data-fx="fadeInUpSmall">
+                {% include "components/reviews.twig" %}
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% include "parts/footer.twig" %}

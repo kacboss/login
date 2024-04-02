@@ -37,21 +37,21 @@
         {% include 'svg/Logintrade.svg' %}
       </a>
 
-      <ul class="header__menu">
-        <li class="header__menu__item active">
-          <a href="">Start</a>
-        </li>
-        <li class="header__menu__item">
-          <a href="">About us</a>
-        </li>
-        <li class="header__menu__item">
-          <a href="">Customer</a>
-        </li>
-      </ul>
+
+      {% if main_menu.items %}
+        <ul class="header__menu">
+            {% for item in main_menu.items %}
+                <li class="header__menu__item {{ item.current ? 'active' }}">
+                  <a href="{{ item.link }}">{{item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+     {% endif %}
+
 
       <div class="header__menu--right">
         <a href="" class="sign-in">{% include 'svg/person.svg' %} Sign in</a>
-        <a href="" class="btn">Book a demo {% include 'svg/arrow-right.svg' %}</a>
+        <a href="" class="btn book-btn">Book a demo {% include 'svg/arrow-right.svg' %}</a>
       </div>
 
 
@@ -63,22 +63,21 @@
       </button>
 
       <div class="mobile-menu">
-        
-        <ul class="header__menu">
-          <li class="header__menu__item active">
-            <a href="">Start</a>
-          </li>
-          <li class="header__menu__item">
-            <a href="">About us</a>
-          </li>
-          <li class="header__menu__item">
-            <a href="">Customer</a>
-          </li>
-        </ul>
+
+        {% if main_menu.items %}
+          <ul class="header__menu">
+              {% for item in main_menu.items %}
+                  <li class="header__menu__item {{ item.current ? 'active' }}">
+                    <a href="{{ item.link }}">{{item.title }}</a>
+                  </li>
+              {% endfor %}
+          </ul>
+        {% endif %}
+
   
         <div class="header__menu--right">
           <a href="" class="sign-in">{% include 'svg/person.svg' %} Sign in</a>
-          <a href="" class="btn">Book a demo {% include 'svg/arrow-right.svg' %}</a>
+          <a href="" class="btn book-btn">Book a demo {% include 'svg/arrow-right.svg' %}</a>
         </div>
 
       </div>

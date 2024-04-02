@@ -1,0 +1,97 @@
+<div class="book">
+    <div class="book__box">
+        <div class="exit-mobile">
+            {% include "views/svg/exit.svg" %}
+        </div>
+
+        <div class="book__box--left">
+            <div class="book-header">
+
+                <div class="stars">
+                    {% include "views/svg/form-stars.svg" %}
+                </div>
+
+                <div class="small-title">Here’s how to get started, book a demo.</div>
+                <div class="h4">See how the magic works in action</div>
+                <div class="body-medium">Fill out the form to schedule a personalized demo and learn all about the magic procurement spells that will drive your business forward and make work infinitely
+                    easier for your teams and vendors.</div>
+            </div>
+
+
+            <form class="contact-form" action="">
+
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <label for="name" class="contact-form__label">What is your first name?</label>
+                        <input type="text" name="name" id="name" class="contact-form__input" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="surname" class="contact-form__label">What is your last name?</label>
+                        <input type="text" name="surname" id="surname" class="contact-form__input" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <label for="company" class="contact-form__label">What is your company name?</label>
+                        <input type="text" name="company" id="company" class="contact-form__input" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="employees" class="contact-form__label">How many employees there are?</label>
+                        <input type="text" name="name" id="employees" class="contact-form__input" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <label for="email" class="contact-form__label">What is your business email?</label>
+                        <input type="email" name="email" id="email" class="contact-form__input" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="phone" class="contact-form__label">What is your phone number?</label>
+                        <input type="text" name="phone" id="phone" class="contact-form__input" required>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="needs" class="contact-form__label">Could you please tell us more about your needs?</label>
+                    <input type="text" name="needs" id="needs" class="contact-form__input" required>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="hear" class="contact-form__label">How did you hear about us?</label>
+                    <input type="text" name="hear" id="hear" class="contact-form__input" required>
+                </div>
+
+
+                <button class="btn" type="submit">
+                    Submit now {% include 'svg/arrow-right.svg' %}
+                </button>
+
+            </form>
+        </div>
+        <div class="book__box--right">
+            
+            <div class="exit">
+                {% include "views/svg/exit.svg" %}
+            </div>
+
+            <div class="h7">Here’s what we’ll cover for you:</div>
+            <ul>
+                <li>Your goals and current challenges</li>
+                <li>Your team’s processes & workflows</li>
+                <li>Your tech stack & needs</li>
+                <li>An overview of Logintrade and specific features for you</li>
+                <li>Questions & Answers</li>
+                <li>Plus, a sprinkle of magic ✨</li>
+
+            </ul>
+
+
+            <div class="stars-bottom">
+                {% include "views/svg/stars-bottom.svg" %}
+            </div>
+
+        </div>
+    </div>
+</div>

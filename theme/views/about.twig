@@ -1,0 +1,182 @@
+{% include "parts/header.twig" %}
+{% include "components/form.twig" %}
+
+<section class="about-baner">
+    <div class="about-baner__arrow">
+        {% include "views/svg/arrow-top.svg" %}
+      </div>
+    <div class="row">
+        <div class="column">
+            <div class="h2">
+                Business, finance, AI, and magic?<br>
+                We can’t see <span class="line">why not!</span> <span class="sygnet">TA{% include "views/svg/sygner.svg" %}DA!</span>
+            </div>
+            <div class="about-baner__box">
+                <div class="left">
+                    <img src="{{ theme.link ~ '/images/arr.png' }}" alt="">
+                </div>
+                <div class="right">
+                    <img src="{{ theme.link ~ '/images/about-av.svg' }}" alt="">
+                    <div class="h5">
+                        <p>The era of artificial intelligence is here, and boy, are people freaking out.</p>
+                        <p>But we used the magic of AI way before it was cool.</p>
+                        <p>We did start like most B2B startups: with forms, manual data inputs, workflows, Excel files, supplier emails, and many other non-AI features. But then we turned AI-first, and there was no turning back.</p>
+                    </div>
+                    <div class="btns">
+                        <div class="baner__btns">
+                            <a href="#team" class="btn btn--second">Meet our team</a>
+                            <a href="" class="btn book-btn">Book a demo {% include 'svg/arrow-right.svg' %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-baner__spark">
+        {% include "views/svg/spark-right-bottom.svg" %}
+      </div>
+  
+</section>
+
+<section id="team" class="about-team">
+    <div class="row">
+        <div class="column">
+            <div class="section-title" data-fx="fadeInUpSmall">
+                Special operations team?<br>This is us, <span class="sygnet">TA{% include "views/svg/sygner.svg" %}DA!</span>
+            </div>
+            <div class="body-medium" data-fx="fadeInUpSmall">
+                Meet the key members of the Logintrade team and synchronize seamlessly with us.
+            </div>
+            <div class="team">
+
+                <div class="team__item" data-fx="fadeInUpSmall">
+                    <div class="card"></div>
+                    <img src="{{ theme.link ~ '/images/tw.png' }}" alt="">
+                    <div class="team__item-wrapper">
+                        <div class="name">Tomasz Wudarzewski</div>
+                        <div class="bottom">
+                            <div class="position">Chief Executive Officer</div>
+                            <a class="linkedin" href="">{% include 'svg/Linkedin.svg' %}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team__item" data-fx="fadeInUpSmall">
+                    <div class="card"></div>
+                    <img src="{{ theme.link ~ '/images/ms.png' }}" alt="">
+                    <div class="team__item-wrapper">
+                        <div class="name">Michał Szlachcic</div>
+                        <div class="bottom">
+                            <div class="position">Managing Director</div>
+                            <a class="linkedin" href="">{% include 'svg/Linkedin.svg' %}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team__item" data-fx="fadeInUpSmall">
+                    <div class="card"></div>
+                    <img src="{{ theme.link ~ '/images/gg.png' }}" alt="">
+                    <div class="team__item-wrapper">
+                        <div class="name">Grzegorz Gwiazdowski</div>
+                        <div class="bottom">
+                            <div class="position">Artificial Intelligence</div>
+                            <a class="linkedin" href="">{% include 'svg/Linkedin.svg' %}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team__item" data-fx="fadeInUpSmall">
+                    <div class="card"></div>
+                    <img src="{{ theme.link ~ '/images/dk.png' }}" alt="">
+                    <div class="team__item-wrapper">
+                        <div class="name">Dominik Krzewicki</div>
+                        <div class="bottom">
+                            <div class="position">Chief Technology Officer</div>
+                            <a class="linkedin" href="">{% include 'svg/Linkedin.svg' %}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team__item" data-fx="fadeInUpSmall">
+                    <div class="card"></div>
+                    <img src="{{ theme.link ~ '/images/kp.png' }}" alt="">
+                    <div class="team__item-wrapper">
+                        <div class="name">Katarzyna Panterałka</div>
+                        <div class="bottom">
+                            <div class="position">office operations</div>
+                            <a class="linkedin" href="">{% include 'svg/Linkedin.svg' %}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team__item" data-fx="fadeInUpSmall">
+                    <div class="card"></div>
+                    <img src="{{ theme.link ~ '/images/km.png' }}" alt="">
+                    <div class="team__item-wrapper">
+                        <div class="name">Katarzyna Maślanka</div>
+                        <div class="bottom">
+                            <div class="position">Project manager</div>
+                            <a class="linkedin" href="">{% include 'svg/Linkedin.svg' %}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team__item" data-fx="fadeInUpSmall">
+                    <div class="card"></div>
+                    <img src="{{ theme.link ~ '/images/tc.png' }}" alt="">
+                    <div class="team__item-wrapper">
+                        <div class="name">Tomasz Chęć</div>
+                        <div class="bottom">
+                            <div class="position">sales manager</div>
+                            <a class="linkedin" href="">{% include 'svg/Linkedin.svg' %}</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="team__item" data-fx="fadeInUpSmall">
+                    <div class="card"></div>
+                    <img src="{{ theme.link ~ '/images/przedo.png' }}" alt="">
+                    <div class="team__item-wrapper">
+                        <div class="name">Imię i nazwisko</div>
+                        <div class="bottom">
+                            <div class="position">Quality Assurance</div>
+                            <a class="linkedin" href="">{% include 'svg/Linkedin.svg' %}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team__item" data-fx="fadeInUpSmall">
+                    <div class="card"></div>
+                    <img src="{{ theme.link ~ '/images/ost.png' }}" alt="">
+                    <div class="team__item-wrapper">
+                        <div class="name">Imię i nazwisko</div>
+                        <div class="bottom">
+                            <div class="position">Product Owner</div>
+                            <a class="linkedin" href="">{% include 'svg/Linkedin.svg' %}</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="team__item last" data-fx="fadeInUpSmall">
+                    <img src="{{ theme.link ~ '/images/starsteam.svg' }}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-join">
+    <div class="row">
+        <div class="column">
+            <div class="h4" data-fx="fadeInUpSmall">Would you like to join us?</div>
+            <div class="body-medium" data-fx="fadeInUpSmall">
+                Get to know our goals, strengths, and available roles within the team.
+            </div>
+            <a href="" class="btn btn--light book-btn book-btn" data-fx="fadeInUpSmall">Book a demo {% include 'svg/arrow-right.svg' %}</a>
+
+        </div>
+    </div>
+</section>
+
+{% include "parts/footer.twig" %}

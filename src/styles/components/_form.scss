@@ -1,0 +1,200 @@
+.book {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.945);
+    z-index: 3333333;
+    height: 100vh;
+    text-align: left;
+    display: none;
+    .book-header {
+        position: relative;
+        svg {
+            position: absolute;
+            right: 0;
+            top: 0;
+            @include breakpoint(lg down) {
+                display: none;
+            }
+        }
+    }
+    &.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 333333333;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__box {
+        position: relative;
+        .exit-mobile {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 333;
+            path {
+                stroke: black;
+            }
+            @include breakpoint(lg up) {
+                display: none;
+            }
+        }
+
+
+        display: flex;
+        background-color: white;
+        max-width: 1135px;
+        border-radius: 12px;
+        box-shadow: 0px 16px 72px 0px #2E343C33;
+        overflow-y: scroll;
+         max-height: 100%;
+         &::-webkit-scrollbar {
+            display: none;
+        }
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none; 
+        @include breakpoint(lg down) {
+            flex-direction: column;
+        }
+        &--left {
+            padding: 64px;
+            width: 65%;
+            height: 100%;
+            @include breakpoint(lg down) {
+                width: 100%;
+                padding: 24px;
+            }
+            .small-title {
+                font-family: Inter;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 12px;
+                text-align: left;
+                color: #6D7D8E;
+            }
+            .h4 {
+                margin: 8px 0px 16px;
+                color: black;
+                max-width: 415px;
+            }
+            .body-medium {
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 18.48px;
+                text-align: left;
+                color: #414C58;
+                max-width: 581px;
+            }
+            .contact-form {
+                margin-top: 32px;
+                .form-row {
+                    display: flex;
+                    gap: 24px;
+                    @include breakpoint(md down) {
+                        flex-direction: column;
+                        gap: 0px;
+                    }
+                }
+                .input-wrapper {
+                    width: 100%;
+                }
+                &__label {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 18.48px;
+                    text-align: left;
+                    margin-bottom: 8px;
+                    color: #6D7D8E;
+                }
+                input {
+                    border-radius: 24px;
+                    border: 1px solid #C6D4E4;
+                    margin-bottom: 16px;
+                    width: 100%;
+                    padding: 15px 14px;
+                    font-size: 14px;
+                }
+                .btn {
+                    margin-top: 16px;
+                    border: none;
+                }
+            }
+        }
+        &--right {
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+            padding: 64px;
+            color: white;
+            background-color: #243837;
+            position: relative;
+            width: 35%;
+
+            @include breakpoint(lg down) {
+                width: 100%;
+                padding: 24px;
+                padding-bottom: 140px;
+
+                border-top-right-radius: 0px;
+                border-bottom-left-radius: 12px;
+
+            }
+            .stars-bottom {
+                svg {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    @include breakpoint(lg down) {
+                        max-width: 160px;
+                        height: auto;
+                    }
+                }
+            }
+            .h7 {
+                max-width: 200px;
+            }
+            .exit {
+                position: absolute;
+                top: 48px;
+                right: 48px;
+                cursor: pointer;
+                @include breakpoint(lg down) {
+                    display: none;
+                }
+            }
+            .h7 {
+
+            }
+            ul {
+                padding: 0px;
+                li {
+                    display: flex;
+                    align-items: baseline;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    line-height: 18.48px;
+                    &:before {
+                        content: '';
+                        top: 3px;
+                        position: relative;
+                        margin-right: 8px;
+                        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='14' height='14' rx='7' fill='%23CDF348'/%3E%3Cpath d='M11.2035 6.1803C11.3681 5.97879 11.341 5.68255 11.1426 5.51425C10.939 5.3416 10.6334 5.36947 10.4644 5.57609L7.72268 8.92803L7.72305 8.93195L7.30216 9.44553L6.79209 9.00727L6.79172 9.00332L5.46119 7.83784C5.26048 7.66202 4.95388 7.68819 4.78586 7.89547C4.62637 8.09222 4.65131 8.37994 4.84228 8.54632L6.70273 10.1672C7.10011 10.5134 7.70514 10.4621 8.0386 10.054L11.2035 6.1803Z' fill='%23243837' stroke='%23243837' stroke-width='0.466667'/%3E%3C/svg%3E%0A");
+                        width: 16px;
+                        height: 16px;
+                        min-width: 16px;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}

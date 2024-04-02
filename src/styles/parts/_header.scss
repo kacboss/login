@@ -1,4 +1,13 @@
+[data-scrolled="true"] .header {
+
+}
+
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4444444;
+
   text-align: center;
   padding: 24px 0px;
   background-color: #B8C9DD;
@@ -17,10 +26,17 @@
   }
   &__logo {
     display: block;
-    max-width: 120px;
-    @include breakpoint(md down) {
-      max-width: 100px;
+    
+    @include breakpoint(md up) {
+      width: 281px; 
     }
+    svg {
+      max-width: 120px;
+      @include breakpoint(md down) {
+        max-width: 100px;
+      }
+    }
+
   }
   &__menu {
     list-style: none;

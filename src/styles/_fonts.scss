@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'PPTelegraf';
-    src: url('../assets/fonts/PPTelegraf-Regular.otf') format('opentype');
+    src: url('../assets/fonts/PPTelegraf-Regular.woff2') format('woff2'),
+         url('../assets/fonts/PPTelegraf-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -8,24 +9,63 @@
 
 @font-face {
     font-family: 'PPTelegraf';
-    src: url('../assets/fonts/PPTelegraf-RegularOblique.otf') format('opentype');
-    font-weight: 400;
-    font-style: oblique;
+    src: url('../assets/fonts/PPTelegraf-Bold.woff2') format('woff2'),
+         url('../assets/fonts/PPTelegraf-Bold.woff') format('woff');
+    font-weight: bold; /* 700 */
+    font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'PPTelegraf';
-    src: url('../assets/fonts/PPTelegraf-RegularSlanted.otf') format('opentype');
-    font-weight: 400;
-    font-style: italic; /* Assuming 'slanted' is akin to 'italic' for your purposes */
+    src: url('../assets/fonts/PPTelegraf-Light.woff2') format('woff2'),
+         url('../assets/fonts/PPTelegraf-Light.woff') format('woff');
+    font-weight: 300; /* Light */
+    font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'PPTelegraf';
-    src: url('../assets/fonts/PPTelegraf-Ultrabold.otf') format('opentype');
-    font-weight: 800; /* Ultrabold might be considered 800 weight */
+    src: url('../assets/fonts/PPTelegraf-Medium.woff2') format('woff2'),
+         url('../assets/fonts/PPTelegraf-Medium.woff') format('woff');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPTelegraf';
+    src: url('../assets/fonts/PPTelegraf-Semibold.woff2') format('woff2'),
+         url('../assets/fonts/PPTelegraf-Semibold.woff') format('woff');
+    font-weight: 600; /* Semi-bold */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPTelegraf';
+    src: url('../assets/fonts/PPTelegraf-Black.woff2') format('woff2'),
+         url('../assets/fonts/PPTelegraf-Black.woff') format('woff');
+    font-weight: 900; /* Black */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPTelegraf';
+    src: url('../assets/fonts/PPTelegraf-Ultrabold.woff2') format('woff2'),
+         url('../assets/fonts/PPTelegraf-Ultrabold.woff') format('woff');
+    font-weight: 800; /* Ultra-bold */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPTelegraf';
+    src: url('../assets/fonts/PPTelegraf-Ultralight.woff2') format('woff2'),
+         url('../assets/fonts/PPTelegraf-Ultralight.woff') format('woff');
+    font-weight: 200; /* Ultra-light */
     font-style: normal;
     font-display: swap;
 }

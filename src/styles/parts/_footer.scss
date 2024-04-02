@@ -74,6 +74,8 @@
       } 
     }
     &:after {
+      background-position: center;
+      background-repeat: no-repeat;
       content: '';
       height: 8px;
       position: absolute;
