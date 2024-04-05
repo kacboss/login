@@ -77,9 +77,9 @@ main {
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
-  line-height: 19.2px;
+  line-height: 17.2px;
   color: #243837;
-  padding: 16px 16px 16px 24px;
+  padding: 16px 19px 16px 25px;
   border-radius: 12px;
   display: inline-flex;
   align-items: center;
@@ -417,4 +417,8 @@ section, .section {
     }
 
   }
+}
+
+.cf-message {
+  margin-top: 20px;
 }

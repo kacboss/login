@@ -18,7 +18,7 @@
             </div>
 
 
-            <form class="contact-form" action="">
+            <form class="contact-form" action="" data-action="ajax_contact">
 
                 <div class="form-row">
                     <div class="input-wrapper">
@@ -38,7 +38,7 @@
                     </div>
                     <div class="input-wrapper">
                         <label for="employees" class="contact-form__label">How many employees there are?</label>
-                        <input type="text" name="name" id="employees" class="contact-form__input" required>
+                        <input type="text" name="employees" id="employees" class="contact-form__input" required>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@
                 <button class="btn" type="submit">
                     Submit now {% include 'svg/arrow-right.svg' %}
                 </button>
-
+                <div class="cf-message"></div>
             </form>
         </div>
         <div class="book__box--right">

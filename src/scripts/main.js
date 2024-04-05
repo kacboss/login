@@ -3,7 +3,7 @@ import ScrollTrigger  from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import AnimationsOnScroll from "./AnimationsOnScroll";
 import Animations from "./Animations";
-import InView from 'InView';
+
 
 const app = {
 
@@ -12,6 +12,7 @@ const app = {
 		let form = document.querySelector('.book');
 		let exit = document.querySelector('.exit');
 		let exit_mobile = document.querySelector('.exit-mobile');
+		let msg         	= document.querySelector('.cf-message');
 
 		let body = document.body;
 
@@ -31,14 +32,14 @@ const app = {
                 // Remove 'active' class from the form when 'exit' is clicked
                 form.classList.remove('active');
 				body.classList.remove('body-no-scroll');
-
+				msg.innerHTML = "";
             });
 
 			exit_mobile.addEventListener('click', function() {
                 // Remove 'active' class from the form when 'exit' is clicked
                 form.classList.remove('active');
 				body.classList.remove('body-no-scroll');
-
+				msg.innerHTML = "";
             });
 
 		}
@@ -59,13 +60,61 @@ const app = {
 		);
 
 		let config = {
-         	classTo: 'form__input__group',
-         	errorClass: 'form__input__group--error',
-         	successClass: 'form__input__group--success',
+         	classTo: 'input-wrapper',
+         	errorClass: 'input-wrapper--error',
+         	successClass: 'input-wrapper--success',
       	};
 
       	return config;
 
+	},
+
+	contactForm: () => {
+
+		let config 		= app.getValidationConfig();
+		let forms 		= document.querySelectorAll('.book__box');
+	
+		if ( forms ) {
+	
+		  [].forEach.call(forms, form => {
+
+			let contactForm 	= form.querySelector('.contact-form');
+			let submitBtn   	= form.querySelector('.btn');
+			let formValidator 	= new Pristine(contactForm, config, true);
+			let msg         	= form.querySelector('.cf-message');
+
+	
+			  submitBtn.addEventListener('click', (e) => {
+				e.preventDefault();
+				
+				if ( formValidator.validate()  ) {
+		
+				
+				var formData = new FormData(contactForm);
+	
+				formData.append('action', contactForm.getAttribute('data-action'));
+	
+				let request = ajax({
+				  method: 'POST',
+				  headers: {
+					  'content-type': false
+				  },
+				  url: wpp.ajax,
+				  data: formData
+				})
+				request.then(function(response) {
+					msg.textContent = response.msg;
+					let inputFields = contactForm.querySelectorAll('input, textarea');
+					[].forEach.call(inputFields, field => {
+						field.value = '';
+					});
+				});
+			   }
+	
+			  }, false);
+	
+			});
+		  }
 	},
 
 
@@ -328,6 +377,7 @@ const app = {
 	},
 	
 	init: () => {
+		app.contactForm();
 		AnimationsOnScroll.init();
 		app.reviews();
 		app.body();
@@ -335,6 +385,7 @@ const app = {
 		app.showMobileMenu();
 		app.book();
 		app.customers();
+
 	}
 };
 

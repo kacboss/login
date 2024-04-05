@@ -25,10 +25,10 @@ class Assets
             '//polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=default,Object.entries,Object.values,Array.prototype.includes,Symbol.iterator,Array.prototype.@@iterator,NodeList.prototype.@@iterator,NodeList.prototype.forEach,Array.prototype.find,Array.prototype.forEach,Array.prototype.findIndex,Symbol,Array.from,URL',
             false, null, true);
 
-        wp_enqueue_script('theme-vendor2', get_stylesheet_directory_uri() . '/scripts/vendor.js', false, THEME_VERSION, true);
-        wp_enqueue_script('theme-main', get_stylesheet_directory_uri() . '/scripts/main.js', ['theme-vendor2'], THEME_VERSION, true);
+        wp_enqueue_script('theme-vendor', get_stylesheet_directory_uri() . '/scripts/vendor.js', false, '1.0.0', true);
+        wp_enqueue_script('theme-main', get_stylesheet_directory_uri() . '/scripts/main.js', ['theme-vendor'], '1.0.0', true);
 
-        wp_localize_script('theme-main', 'wp', [
+        wp_localize_script('theme-main', 'wpp', [
             'ajax' => admin_url('admin-ajax.php'),
         ], 'before');
     }

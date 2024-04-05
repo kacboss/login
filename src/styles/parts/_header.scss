@@ -28,10 +28,10 @@
     display: block;
     
     @include breakpoint(md up) {
-      width: 281px; 
+      width: 261px; 
     }
     svg {
-      max-width: 120px;
+      max-width: 179px;
       @include breakpoint(md down) {
         max-width: 100px;
       }
@@ -75,6 +75,11 @@
       align-items: center;
       @include breakpoint(md down) {
         display: none;
+      }
+      .btn {
+        font-size: 14px;
+        line-height: 14.2px;
+        padding: 12px 16px 12px 16px;
       }
       .sign-in {
         margin-right: 16px;

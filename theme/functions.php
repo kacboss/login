@@ -95,35 +95,4 @@ class StarterSite extends TimberSite
 new StarterSite();
 
 
-add_action( 'init', 'my_custom_post_type_rest_support', 25 );
-function my_custom_post_type_rest_support() {
-  global $wp_post_types;
 
-  $post_type_name = 'distributor';
-  if( isset( $wp_post_types[ $post_type_name ] ) ) {
-    $wp_post_types[$post_type_name]->show_in_rest = true;
-    $wp_post_types[$post_type_name]->rest_base = $post_type_name;
-    $wp_post_types[$post_type_name]->rest_controller_class = 'WP_REST_Posts_Controller';
-  }
-}
-
-function register_distributor_custom_fields() {
-  
-  register_rest_field('distributor', 'longitude', [
-      'get_callback' => 'get_distributor_custom_field',
-      'update_callback' => null,
-      'schema' => null,
-  ]);
-
-  register_rest_field('distributor', 'latitude', [
-      'get_callback' => 'get_distributor_custom_field',
-      'update_callback' => null,
-      'schema' => null,
-  ]);
-}
-
-add_action('rest_api_init', 'register_distributor_custom_fields');
-
-function get_distributor_custom_field($object, $field_name, $request) {
-  return get_post_meta($object['id'], $field_name, true);
-}

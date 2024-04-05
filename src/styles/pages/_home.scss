@@ -19,7 +19,6 @@
       z-index: 33;
       span {
         position: relative;
-        display: inline-block;
           &:before {
             background-repeat: no-repeat;
             content: '';
@@ -42,6 +41,7 @@
             height: 8px;
             position: absolute;
             width: 100%;
+            background-size: cover;
             left: 0px;
             z-index: 7;
             bottom: -2px;
@@ -130,9 +130,10 @@
       position: relative;
       z-index: 33;
       color: black;
+      max-width: 650px;
+      margin: auto;
       span {
         position: relative;
-        display: inline-block;
           &:before {
             background-repeat: no-repeat;
             content: '';
@@ -373,8 +374,9 @@
   @include breakpoint(sm down) {
     margin-top: -260px;
   }
-  .section-title {
+  .h4 {
     color: black;
+    text-align: center;
   }
   &:before {
     position: absolute;
@@ -384,6 +386,9 @@
     left: 0;
     top: 0;
     height: 240px;
+    @include breakpoint(sm down) {
+      height: 261px;
+    }
   }
   &__header {
     max-width: 900px;
@@ -662,7 +667,7 @@
   }
   .section-title {
     margin: auto;
-    max-width: 790px;
+    max-width: 800px;
     text-align: center;
     position: relative;
     z-index: 33;
@@ -876,9 +881,11 @@
   }
   .body-medium {
     color: #ffffff94;
-    max-width: 840px;
+    max-width: 750px;
     margin: auto;
     margin-bottom: 48px;
+    font-size: 16px;
+    line-height: 21px;
   }
   &__header {
     padding: 120px 0px;
